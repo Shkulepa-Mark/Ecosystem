@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.List;
 
 public class FileManager {
     public void create(String filename, String data) {
@@ -25,6 +26,17 @@ public class FileManager {
         } else {
             System.err.println("File " + filename + "doesn't exist");
         }
+    }
+
+    public void saveSimulation(String filename, List<Animal> animals, List<Plant> plants) {
+        StringBuilder data = new StringBuilder();
+        for (Animal animal : animals) {
+            data.append(animal.toString()).append("\n");
+        }
+        for (Plant plant : plants) {
+            data.append(plant.toString()).append("\n");
+        }
+        saveToFile(filename, data.toString());
     }
 
     public void saveToFile(String filename, String data) {
