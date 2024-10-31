@@ -1,6 +1,32 @@
 import java.io.*;
 
 public class FileManager {
+    public void create(String filename, String data) {
+        saveToFile(filename, data);
+    }
+    public String read(String filename) {
+        return  readFromFile(filename);
+    }
+
+    public void update(String filename, String data) {
+        delete(filename);
+        saveToFile(filename, data);
+    }
+
+    public void delete(String filename) {
+        File file = new File("resourses/" + filename);
+
+        if (file.exists()) {
+            if (file.delete()) {
+                System.out.println("File " + filename + " deleted");
+            } else {
+                System.err.println("Error deleting file " + filename);
+            }
+        } else {
+            System.err.println("File " + filename + "doesn't exist");
+        }
+    }
+
     public void saveToFile(String filename, String data) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("resourses/" + filename))) {
             writer.write(data);
