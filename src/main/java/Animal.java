@@ -102,6 +102,6 @@ public class Animal {
 
     @Override
     public String toString() {
-        return species + " [age = " + age + ", health = " + health + "]";
+        return "ID: " + id + ", Species: " + species + " [age = " + age + ", health = " + health + ", hunger = " + hungerLevel + "]";
     }
 }
