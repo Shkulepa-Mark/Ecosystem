@@ -4,6 +4,7 @@ public class Plant {
     private String species;
     private int height;
     private int waterNeed;
+    private FileManager fileManager = new FileManager();
 
     public Plant(String species, int health, int waterNeed) {
         this.id = idCounter++;

@@ -6,9 +6,9 @@ public class Animal {
     private int health; // 0 - 100
     private int hungerLevel;
 
-    public Animal(String spicies, int age, int health, int hungerLevel) {
+    public Animal(String species, int age, int health, int hungerLevel) {
         this.id = idCounter++;
-        this.species = spicies;
+        this.species = species;
         this.age = age;
         this.health = health;
         this.hungerLevel = hungerLevel;
